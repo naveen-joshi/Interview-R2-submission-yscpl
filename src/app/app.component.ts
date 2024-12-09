@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SearchInputComponent],
+  imports: [SearchInputComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
