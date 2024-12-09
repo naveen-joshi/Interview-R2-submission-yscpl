@@ -2,10 +2,11 @@ import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, Subject, switchMap } from 'rxjs';
 import { SearchService } from './search.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-search-input',
-  imports: [FormsModule],
+  imports: [FormsModule, NgClass],
   templateUrl: './search-input.component.html',
   styleUrl: './search-input.component.scss',
 })
@@ -15,6 +16,7 @@ export class SearchInputComponent implements OnInit {
   searchService = inject(SearchService);
   public searchResults: any[] = [];
   showSearchResults = false;
+  hoveredItem: any = null;
 
   @Output() searchValue = new EventEmitter<any>();
 

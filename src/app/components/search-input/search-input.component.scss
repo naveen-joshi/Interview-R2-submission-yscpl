@@ -1,0 +1,12 @@
+.search-input {
+    input.form-control {
+        &:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+        
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}
