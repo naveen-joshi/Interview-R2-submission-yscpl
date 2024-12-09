@@ -1,0 +1,20 @@
+<div class="flex gap-2">
+    <div class="search-container">
+        <div class="search-input relative rounded bg-[#FFFFFF] p-2 flex items-center">
+            <input type="text" [(ngModel)]="searchTerm" (input)="onInput()" placeholder="Search" class="text-black outline-none py-4 w-[710px] pl-5">
+            <button class="absolute left-2">🔍</button>
+            <button class="absolute right-2 bg-[#4F40FF] py-4 px-[30px] rounded">Search</button>
+        </div>
+        @if (showSearchResults) {
+            <div class="bg-white mt-2 rounded p-2 max-h-[250px] overflow-y-scroll">
+                @if (searchResults.length > 0) {
+                    @for (item of searchResults; track $index) {
+                        <div class="text-black hover:bg-blue-600 hover:text-white p-1" (click)="selectResult(item)">{{item.name}}</div>
+                    }
+                } @else {
+                    <p class="text-center text-black">No Results Found</p>
+                }
+            </div>
+        }
+    </div>
+</div>
